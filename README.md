@@ -15,24 +15,24 @@
   spring.rabbitmq.password=GRvZLDaupWcZY7YRVX0VXM9BoX3NT6C2
   spring.rabbitmq.virtual-host=qaqvjoai
   
-# 2. Đầu tiên cần add dependence để làm việc với RabbitMQ
+# 3. Đầu tiên cần add dependence để làm việc với RabbitMQ
      <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
-# 3. Thêm dependence Gson để chuyển đổi object send qua Json
+# 4. Thêm dependence Gson để chuyển đổi object send qua Json
    <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.8.9</version>
         </dependency>
-# 4. Cấu hình Queue trong application
+# 5. Cấu hình Queue trong application
     rabbit.queue.name=demo-rabbit-queue
     rabbit.topic.exchange=demo-rabbit-exchange-log
     rabbit.routing.key=demo-rabbit-key
     path.file.csv= log-project/
     
-# 5. Cấu hình RabbitConfig
+# 6. Cấu hình RabbitConfig
 @Configuration
 public class RabbitConfig {
 
@@ -61,7 +61,7 @@ public class RabbitConfig {
     }
 }
 
-# 6. Cấu hình Producer để truyền dữ liệu
+# 7. Cấu hình Producer để truyền dữ liệu
 
 @Service
 @Slf4j
@@ -102,9 +102,4 @@ public class RabbitProducerService {
 }
 
 
-# Cấu hình Consumer để nhận và xử lý dữ liệu
-
-
-
-
-
+# 8. Cấu hình Consumer để nhận và xử lý dữ liệu
