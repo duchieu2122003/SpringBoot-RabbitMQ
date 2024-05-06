@@ -2,7 +2,7 @@
 1. Đăng ký tài khoản Rabbit CloudAMQP
    Vào link https://www.cloudamqp.com/
 2. #Cấu hình RabbitMQ: Offline hoặc Online
-   # Cấu hình rabbit offline
+  # Cấu hình rabbit offline
   #spring.rabbitmq.host=localhost
   #spring.rabbitmq.port=5672
   #spring.rabbitmq.username=guest
@@ -15,7 +15,7 @@ HOẶC
   spring.rabbitmq.password=GRvZLDaupWcZY7YRVX0VXM9BoX3NT6C2
   spring.rabbitmq.virtual-host=qaqvjoai
   
-3.Đầu tiên cần add dependence để làm việc với RabbitMQ
+#.Đầu tiên cần add dependence để làm việc với RabbitMQ
      <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
