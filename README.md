@@ -102,7 +102,7 @@ public class RabbitProducerService {
 }
 
 
-#. Cấu hình Consumer để nhận và xử lý dữ liệu
+# Cấu hình Consumer để nhận và xử lý dữ liệu
 
 
 
