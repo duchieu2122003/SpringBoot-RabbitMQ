@@ -1,14 +1,14 @@
-# SpringBoot-RabbitMQ
-1. Đăng ký tài khoản Rabbit CloudAMQP
+# Đăng ký tài khoản Rabbit CloudAMQP
    Vào link https://www.cloudamqp.com/
-2. Cấu hình RabbitMQ: Offline hoặc Online
-  # Cấu hình rabbit offline
+   
+#. Cấu hình RabbitMQ: Offline hoặc Online
+  1. Cấu hình rabbit offline
   #spring.rabbitmq.host=localhost
   #spring.rabbitmq.port=5672
   #spring.rabbitmq.username=guest
   #spring.rabbitmq.password=guest
-HOẶC
-  #Cấu hình rabbit cloud
+
+  2.Cấu hình rabbit cloud
   spring.rabbitmq.host=fly.rmq.cloudamqp.com
   spring.rabbitmq.port=5672
   spring.rabbitmq.username=qaqvjoai
@@ -20,32 +20,18 @@ HOẶC
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
-4. Thêm dependence Gson để chuyển đổi object send qua Json
+#. Thêm dependence Gson để chuyển đổi object send qua Json
    <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.8.9</version>
         </dependency>
-5. Cấu hình Queue trong application
+#. Cấu hình Queue trong application
     rabbit.queue.name=demo-rabbit-queue
     rabbit.topic.exchange=demo-rabbit-exchange-log
     rabbit.routing.key=demo-rabbit-key
     path.file.csv= log-project/
-6. Cấu hình RabbitConfig
-   package com.example.springbootrabbitmq.infrastructure.rabbit;
-
-import org.springframework.amqp.core.Binding;
-import org.springframework.amqp.core.BindingBuilder;
-import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.core.TopicExchange;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
-
-/**
- * @author duchieu212
- */
+#. Cấu hình RabbitConfig
 @Configuration
 public class RabbitConfig {
 
@@ -74,11 +60,8 @@ public class RabbitConfig {
     }
 }
 
-5. Cấu hình Producer để truyền dữ liệu
-   
-/**
- * @author duchieu212
- */
+#. Cấu hình Producer để truyền dữ liệu
+
 @Service
 @Slf4j
 @EnableAutoConfiguration
@@ -118,7 +101,7 @@ public class RabbitProducerService {
 }
 
 
-6. Cấu hình Consumer để nhận và xử lý dữ liệu
+#. Cấu hình Consumer để nhận và xử lý dữ liệu
 
 
 
