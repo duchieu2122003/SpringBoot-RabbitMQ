@@ -1,38 +1,38 @@
-# Đăng ký tài khoản Rabbit CloudAMQP
+# 1. Đăng ký tài khoản Rabbit CloudAMQP
    Vào link https://www.cloudamqp.com/
    
-# Cấu hình RabbitMQ: Offline hoặc Online
-  1. Cấu hình rabbit offline
+# 2. Cấu hình RabbitMQ: Offline hoặc Online
+  - Cấu hình rabbit offline
   #spring.rabbitmq.host=localhost
   #spring.rabbitmq.port=5672
   #spring.rabbitmq.username=guest
   #spring.rabbitmq.password=guest
 
-  2.Cấu hình rabbit cloud
+  - Cấu hình rabbit cloud
   spring.rabbitmq.host=fly.rmq.cloudamqp.com
   spring.rabbitmq.port=5672
   spring.rabbitmq.username=qaqvjoai
   spring.rabbitmq.password=GRvZLDaupWcZY7YRVX0VXM9BoX3NT6C2
   spring.rabbitmq.virtual-host=qaqvjoai
   
-# Đầu tiên cần add dependence để làm việc với RabbitMQ
+# 2. Đầu tiên cần add dependence để làm việc với RabbitMQ
      <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
-# Thêm dependence Gson để chuyển đổi object send qua Json
+# 3. Thêm dependence Gson để chuyển đổi object send qua Json
    <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.8.9</version>
         </dependency>
-# Cấu hình Queue trong application
+# 4. Cấu hình Queue trong application
     rabbit.queue.name=demo-rabbit-queue
     rabbit.topic.exchange=demo-rabbit-exchange-log
     rabbit.routing.key=demo-rabbit-key
     path.file.csv= log-project/
     
-# Cấu hình RabbitConfig
+# 5. Cấu hình RabbitConfig
 @Configuration
 public class RabbitConfig {
 
@@ -61,7 +61,7 @@ public class RabbitConfig {
     }
 }
 
-# Cấu hình Producer để truyền dữ liệu
+# 6. Cấu hình Producer để truyền dữ liệu
 
 @Service
 @Slf4j
