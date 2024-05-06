@@ -1,7 +1,7 @@
 # SpringBoot-RabbitMQ
 1. Đăng ký tài khoản Rabbit CloudAMQP
    Vào link https://www.cloudamqp.com/
-2. #Cấu hình RabbitMQ: Offline hoặc Online
+2. Cấu hình RabbitMQ: Offline hoặc Online
   # Cấu hình rabbit offline
   #spring.rabbitmq.host=localhost
   #spring.rabbitmq.port=5672
