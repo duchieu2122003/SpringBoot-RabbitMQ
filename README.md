@@ -1,5 +1,6 @@
 # SpringBoot-RabbitMQ
 0. Cấu hình RabbitMQ: Offline hoặc Online
+1. 
    # Cấu hình rabbit offline
   #spring.rabbitmq.host=localhost
   #spring.rabbitmq.port=5672
