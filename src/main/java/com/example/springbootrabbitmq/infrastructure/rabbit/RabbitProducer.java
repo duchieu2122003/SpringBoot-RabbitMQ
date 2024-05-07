@@ -14,13 +14,13 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @Slf4j
-@EnableAutoConfiguration
+
 public class RabbitProducerService {
 
-    @Value("${rabbit.queue.name}")
+    @Value("${rabbitmq.topic.exchange}")
     private String exchange;
 
-    @Value("${rabbit.routing.key}")
+    @Value("${rabbitmq.routing.key}")
     private String routingKey;
 
     @Value("${path.file.csv}")
@@ -34,8 +34,13 @@ public class RabbitProducerService {
     }
 
     public void sendMessage(String message) {
-        log.info("MESSAGE STRING send =>>>>>>>>> " + message);
-        rabbitTemplate.convertAndSend(exchange, routingKey, message);
+        try{
+            log.info("MESSAGE STRING send =>>>>>>>>> " + message);
+            rabbitTemplate.convertAndSend(message);
+        } catch (Exception e){
+            log.error(e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     public void sendLogMessage(LoggerObject loggerObject) {
