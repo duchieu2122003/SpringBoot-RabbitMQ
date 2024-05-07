@@ -14,8 +14,8 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @Slf4j
-
-public class RabbitProducerService {
+@EnableAutoConfiguration
+public class RabbitProducer {
 
     @Value("${rabbitmq.topic.exchange}")
     private String exchange;
@@ -29,22 +29,15 @@ public class RabbitProducerService {
     private final RabbitTemplate rabbitTemplate;
 
     @Autowired
-    public RabbitProducerService(RabbitTemplate rabbitTemplate) {
+    public RabbitProducer(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
     }
 
     public void sendMessage(String message) {
-        try{
-            log.info("MESSAGE STRING send =>>>>>>>>> " + message);
-            rabbitTemplate.convertAndSend(message);
-        } catch (Exception e){
-            log.error(e.getMessage());
-            e.printStackTrace();
-        }
+        rabbitTemplate.convertAndSend(message);
     }
 
     public void sendLogMessage(LoggerObject loggerObject) {
-        log.info("MESSAGE OBJECT =>>>>>>>>>>>>>>>>");
         loggerObject.setPathFile(pathFolder + loggerObject.getPathFile());
         Gson gson = new Gson();
         String message = gson.toJson(loggerObject);
