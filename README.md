@@ -110,3 +110,18 @@ public class RabbitProducerService {
 
 
 # 8. Cấu hình Consumer để nhận và xử lý dữ liệu
+/**
+ * @author duchieu212
+ */
+@Service
+public class RabbitConsumer {
+
+    @RabbitListener(queues = {"${rabbitmq.queue.name}"})
+    public void consume(String message) {
+        try {
+            System.err.println("Connect and received : " + message);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+}
