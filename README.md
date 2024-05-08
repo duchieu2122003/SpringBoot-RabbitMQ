@@ -2,6 +2,13 @@
    Vào link https://www.cloudamqp.com/
    
 # 2. Cấu hình RabbitMQ: Offline hoặc Online
+  - Máy ảo
+   Build Docker:
+      docker pull rabbitmq
+      docker run -it --rm --name rabbitmqnametest -p 5672:5672 -p 15672:15672 rabbitmq:3.12-management
+      Tài khoản: guest
+      Mật khẩu: guest
+      Host: http://localhost:15672/#/
   - Cấu hình rabbit offline
   #spring.rabbitmq.host=localhost
   #spring.rabbitmq.port=5672
