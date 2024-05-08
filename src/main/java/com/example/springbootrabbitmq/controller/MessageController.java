@@ -33,7 +33,7 @@ public class MessageController {
     public ResponseEntity<String> send() {
 //        LoggerObject loggerObject = new LoggerObject();
 //        loggerObject.setContent(message);
-        String message = "aaaaaaaa";
+        String message = "ANH";
         rabbitProducer.sendMessage(message);
         return ResponseEntity.ok("Producer send message to queue: " + queueName + " - host: " + host);
     }
