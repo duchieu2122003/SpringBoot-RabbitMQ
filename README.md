@@ -110,9 +110,7 @@ public class RabbitProducerService {
 
 
 # 8. Cấu hình Consumer để nhận và xử lý dữ liệu
-/**
- * @author duchieu212
- */
+
 @Service
 public class RabbitConsumer {
 
